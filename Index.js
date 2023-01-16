@@ -1,67 +1,67 @@
 class ProductManager {
-    #products
-    constructor() {
-        this.#products = [];
-        this.idEvento = 1;
-    }
+  #products
+  constructor() {
+      this.#products = [];
+      this.idEvento = 1;
+  }
 
-    verificarProduct(product) {
-        let verificacion = false;
-        this.#products.forEach((producto) => {
-            producto.code === product.code && (verificacion = true);
-        });
-        if (!verificacion) {
-            if (
-                product.title !== "" &&
-                product.description !== "" &&
-                product.price !== "" &&
-                product.thumbnail !== "" &&
-                product.code !== "" &&
-                product.stock !== ""
-            ) {
-                return true;
-            } else {
-                return `Falta algun campo`;
-            }
-        } else {
-            return `El codigo es el mismo que otro producto.`;
-        }
-    }
+  verificarProduct(product) {
+      let verificacion = false;
+      this.#products.forEach((producto) => {
+          producto.code === product.code && (verificacion = true);
+      });
+      if (!verificacion) {
+          if (
+              product.title !== "" &&
+              product.description !== "" &&
+              product.price !== "" &&
+              product.thumbnail !== "" &&
+              product.code !== "" &&
+              product.stock !== ""
+          ) {
+              return true;
+          } else {
+              return `Falta algun campo`;
+          }
+      } else {
+          return `El codigo es el mismo que otro producto.`;
+      }
+  }
 
-    addProduct(product) {
-        const validacion = this.verificarProduct(product)
-        if (validacion === true) {
-            product.crearId(this.idEvento);
-            this.idEvento += 1;
-            this.#products.push(product);
-            return `Carga de producto exitosa.`
-        } else {
-            return validacion
-        }
-    }
+  addProduct(product) {
+      const validacion = this.verificarProduct(product)
+      if (validacion === true) {
+          product.crearId(this.idEvento);
+          this.idEvento += 1;
+          this.#products.push(product);
+          return `Carga de producto exitosa.`
+      } else {
+          return validacion
+      }
+  }
 
-    getProducts() {
-        return this.#products
-    }
+  getProducts() {
+      return this.#products
+  }
 
-    getProductById(id) {
-        return (this.#products.find(product => product.id === id)) || 'ERROR : Not found'
-    }
+  getProductById(id) {
+      return (this.#products.find(product => product.id === id)) || 'ERROR : Not found'
+  }
 }
 
 class Product {
-    constructor(title, description, price, thumbnail, code, stock) {
-        this.title = title;
-        this.description = description;
-        this.price = price;
-        this.thumbnail = thumbnail;
-        this.code = code;
-        this.stock = stock;
-    }
+  constructor(title, description, price, thumbnail, code, stock) {
+      this.title = title;
+      this.description = description;
+      this.price = price;
+      this.thumbnail = thumbnail;
+      this.code = code;
+      this.stock = stock;
+  }
 
-    crearId(id) {
-        this.id = id;
-    }
+  crearId(id) {
+      this.id = id;
+  }
 }
 
 /* Productos */
