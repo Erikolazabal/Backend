@@ -1,0 +1,23 @@
+{
+  "name": "-y",
+  "version": "1.0.0",
+  "description": "Tp backend - Coder",
+  "main": "Index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erikolazabal/Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Erikolazabal/Backend/issues"
+  },
+  "homepage": "https://github.com/Erikolazabal/Backend#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
