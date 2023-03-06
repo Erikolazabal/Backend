@@ -1,0 +1,35 @@
+<div>
+    <h2>Navegación</h2>
+    <a href="http://localhost:3000/products">Productos</a>
+    <a href="http://localhost:3000/carts/63f7e68c40c71c8462e98304">Carrito</a>
+</div>
+
+<h2>Filtros</h2>
+<p>
+    Precio:
+    <a href="http://localhost:3000/products?sort=asc">Ascendente</a>
+    <a href="http://localhost:3000/products?sort=desc">Descendente</a>
+</p>
+<p>
+    Disponibilidad:
+    <a href="http://localhost:3000/products?status=true">Productos con stock</a>
+    <a href="http://localhost:3000/products?status=false">Productos sin stock</a>
+</p>
+<p><a href="http://localhost:3000/products">Limpiar filtros</a></p>
+{{#if hasProducts}}
+    {{#each products}}
+        <div>
+            <h3>{{this.title}}</h3>
+            <p>${{this.price}}</p>
+            <p>
+                <a href="http://localhost:3000/products?category={{this.category}}">{{this.category}}</a>
+            </p>
+            <p>
+                <a href="http://localhost:3000/products/{{this.id}}">Ver detalle</a>
+            </p>
+            <img height="300px" src={{this.thumbnail}} alt="product image"/>
+        </div>
+    {{/each}}
+{{else}}
+    <h2>La lista de productos esta vacia</h2>
+{{/if}}
