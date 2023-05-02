@@ -45,7 +45,7 @@ app.use('/api/products', productsRouter)
 app.use('/api/carts', cartsRouter)
 app.use('/api/sessions', sessionRouter)
 app.use('/users', usersRouter)
-app.use('/mailing', mailingRouter)
+app.use('/mail', mailingRouter)
 app.use('/', viewsRouter)
 
 /*  seteo handlebars */

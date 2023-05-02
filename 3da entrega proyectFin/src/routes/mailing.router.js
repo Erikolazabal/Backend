@@ -7,4 +7,3 @@ const router = Router()
 router.get('/send/:ticketId', isLogged, mailingController.sendTicketOrder)
 
 export default router
-
