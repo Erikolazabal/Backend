@@ -75,7 +75,6 @@ class CartsController {
             const order = []
             for(let i = 0; i < cartData.products.length; i++){
                 const product = await productsService.getProductById(cartData.products[i]._id)
-                //Si el stock es mayor o igual a la cantidad a comprar, se resta la cantidad y se saca el producto del carrito
                 if(product.stock >= cartData.products[i].quantity){
                     order.push({name: product.title, code: product.code, quantity: cartData.products[i].quantity, price: product.price})
                     const newProductStock = product.stock - cartData.products[i].quantity
