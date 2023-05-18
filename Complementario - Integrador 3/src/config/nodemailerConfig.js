@@ -3,10 +3,10 @@ import compliler from 'nodemailer-express-handlebars'
 import { __dirname } from '../__dirname.js'
 
 export const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     auth: {
         user: "brandonbendietaolazabal@gmail.com",
-        pass: "msygiljjnccxvcuy"
+        pass: "msygiljjnccxvcuy" ,
     }
 })
 

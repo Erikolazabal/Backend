@@ -1,12 +1,13 @@
 import nodemailer from 'nodemailer'
 import compliler from 'nodemailer-express-handlebars'
 import { __dirname } from '../__dirname.js'
+import envConfig from './envConfig.js'
 
 export const transporter = nodemailer.createTransport({
-    service: "gmail",
+    service: 'gmail',
     auth: {
-        user: "brandonbendietaolazabal@gmail.com",
-        pass: "msygiljjnccxvcuy" ,
+        user: envConfig.gmailUser,
+        pass: envConfig.gmailPassword
     }
 })
 

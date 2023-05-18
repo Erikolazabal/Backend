@@ -8,6 +8,4 @@ export default {
     mongoUri: process.env.MONGO_URI,
     adminEmail: process.env.ADMIN_EMAIL,
     adminPassword: process.env.ADMIN_PASSWORD,
-    gmailPassword: process.env.GMAIL_PASSWORD,
-    gmailUser: process.env.GMAIL_USER
 }
