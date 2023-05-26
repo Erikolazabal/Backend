@@ -12,7 +12,7 @@ router.get('/', productsController.getProducts)
 router.get('/:prodId', productsController.getProductById)
 
 // Agregar producto
-router.post('/', isAdmin, productsController.addProduct)
+router.post('/', productsController.addProduct)
 
 //Agregar producto premium
 router.post('/premium', isPremium, productsController.addPremiumProduct)

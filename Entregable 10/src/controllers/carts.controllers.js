@@ -68,42 +68,51 @@ class CartsController {
         }
     }
 
-    purchase = async (req, res) => {
+    purchase = async (req, res, next) => {
         try {
-            const session = new SessionDTO(req.session)
-            const { cart, email } = session
-            const cartData = await cartsService.getCartById(cart)
-            const order = []
-            for(let i = 0; i < cartData.products.length; i++){
-                const product = await productsService.getProductById(cartData.products[i]._id)
-                if(product.stock >= cartData.products[i].quantity){
-                    order.push({name: product.title, code: product.code, quantity: cartData.products[i].quantity, price: product.price})
-                    const newProductStock = product.stock - cartData.products[i].quantity
-                    await productsService.updateProductById(product._id, {stock: newProductStock})
-                    await cartsService.deleteProductById(cart, product._id)
-                }
+          const date = new Date();
+          const logger = require('../utils/winston/winston.js'); // Importa el módulo de registro (logger)
+      
+          const session = new SessionDTO(req.session);
+          const { cart, email } = session;
+          const cartData = await cartsService.getCartById(cart);
+          const order = [];
+          for (let i = 0; i < cartData.products.length; i++) {
+            const product = await productsService.getProductById(cartData.products[i]._id);
+            if (product.stock >= cartData.products[i].quantity) {
+              order.push({
+                name: product.title,
+                code: product.code,
+                quantity: cartData.products[i].quantity,
+                price: product.price,
+              });
+              const newProductStock = product.stock - cartData.products[i].quantity;
+              await productsService.updateProductById(product._id, { stock: newProductStock });
+              await cartsService.deleteProductById(cart, product._id);
             }
-            const tickets = await ticketsService.getAllTickets()
-            const total = order.reduce((acc, prod) =>{
-                const productTotal = prod.quantity * prod.price
-                return acc + productTotal
-            }, 0)
-            const purchaseDate = date.toLocaleString('es-ES')
-            const ticket = {
-                code: `${parseInt(tickets[tickets.length - 1].code) + 1}`,
-                purchase_datetime: purchaseDate,
-                amount: total,
-                purchaser: email,
-                order: order,
-            }
-            const purchaseTicket = await ticketsService.createPurchaseTicket(ticket)
-            logger.info('Compra finalizada con éxito')
-            res.send(purchaseTicket)
+          }
+          const tickets = await ticketsService.getAllTickets();
+          const total = order.reduce((acc, prod) => {
+            const productTotal = prod.quantity * prod.price;
+            return acc + productTotal;
+          }, 0);
+          const purchaseDate = date.toLocaleString('es-ES');
+          const ticket = {
+            code: `${parseInt(tickets[tickets.length - 1].code) + 1}`,
+            purchase_datetime: purchaseDate,
+            amount: total,
+            purchaser: email,
+            order: order,
+          };
+          const purchaseTicket = await ticketsService.createPurchaseTicket(ticket);
+          logger.info('Compra finalizada con éxito');
+          res.send(purchaseTicket);
         } catch (error) {
-            logger.error(error)
-            next(error)
+          logger.error(error);
+          next(error);
         }
-    }
+      };
+      
 }
 
 export default new CartsController()
