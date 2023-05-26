@@ -1,5 +1,5 @@
 tags:
     -   name: Products
-        description: Documentation for products endpoints
+        description: Documentación para los endpoints de productos
     -   name: Carts
-        description: Documentation for carts endpoints
+        description: Documentación para los endpoints de carritos

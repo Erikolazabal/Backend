@@ -11,9 +11,9 @@ components:
                         id: string
                         quantity: integer
             example:
-                id: 6427a8f38d91824afd9ee8c0
+                id: 646fb8dfc8a11e0d8eeb1858
                 products:
-                    -   id: 6427a8f38d91824afd9ee8c0
-                        quantity: 5
-                    -   id: 6427a8f38d91824afd9ee8c1
-                        quantity: 10
+                    -   id: 6470338e24ae8edea22c496f
+                        quantity: 1
+                    -   id: 647034c8a8e163a6e2757265
+                        quantity: 2

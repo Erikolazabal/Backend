@@ -25,13 +25,13 @@ components:
                 owner:
                     type: string
             example:
-                id: 6427a8f38d91824afd9ee8c0
-                title: Televisor
-                description: Pantalla plana de 38 pulgadas
-                category: Electrodomesticos
-                code: "0017"
+                id: 647034c8a8e163a6e2757265
+                title: Producto de ejemplo
+                description: Este es un ejemplo de producto
+                category: producto
+                code: "PROD001"
                 stock: 20
-                price: 1750
+                price: 99
                 status: true
-                thumbnail: https://www.lg.com/ar/images/televisores/md06198536/gallery/DZ_1_N.jpg
-                owner: admin@coder.com
+                thumbnail: https://w7.pngwing.com/pngs/918/14/png-transparent-brown-box-cardboard-box-corrugated-box-design-carton-closed-cardboard-box-miscellaneous-cardboard-gift-box-thumbnail.png
+                owner: admin@email.com
