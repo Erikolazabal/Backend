@@ -1,0 +1,37 @@
+#Products
+components:
+    schemas:
+        Products:
+            type: object
+            properties:
+                id:
+                    type: string
+                title:
+                    type: string
+                description:
+                    type: string
+                category:
+                    type: string
+                code:
+                    type: string
+                stock:
+                    type: number
+                price:
+                    type: number
+                status:
+                    type: boolean
+                thumbnail:
+                    type: string
+                owner:
+                    type: string
+            example:
+                id: 647034c8a8e163a6e2757265
+                title: Producto de ejemplo
+                description: Este es un ejemplo de producto
+                category: producto
+                code: "PROD001"
+                stock: 20
+                price: 99
+                status: true
+                thumbnail: https://w7.pngwing.com/pngs/918/14/png-transparent-brown-box-cardboard-box-corrugated-box-design-carton-closed-cardboard-box-miscellaneous-cardboard-gift-box-thumbnail.png
+                owner: admin@email.com

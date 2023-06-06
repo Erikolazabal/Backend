@@ -1,0 +1,35 @@
+paths:
+    /api/products/{pid}:
+        delete:
+            summary: Delete product by ID
+            tags:
+                - Products
+            parameters:
+                -   in: path
+                    name: pid
+                    schema:
+                        type: string
+                        example: 6470338e24ae8edea22c496f
+                    description: Product ID
+                    required: true
+                -   in: body
+                    name: Admin password
+                    schema:
+                        type: object
+                        example: 
+                            password: 1234
+                    required: true
+            responses:
+                "200":
+                    description: Product deleted
+                    content:
+                        application/json:
+                            schemas:
+                                $ref: '#/components/schemas/Products'
+                            example:
+                                acknowledged: true
+                                deletedCount: 1
+                "500":
+                    description: Server error
+                "400":
+                    description: Missing data
