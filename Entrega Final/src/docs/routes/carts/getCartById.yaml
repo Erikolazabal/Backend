@@ -1,0 +1,34 @@
+paths:
+    /api/carts/{cid}:
+        get:
+            summary: Obtener carro por ID
+            tags:
+                - Carts
+            parameters:
+                -   in: path
+                    name: cid
+                    schema:
+                        type: string
+                        example: 646fb8dfc8a11e0d8eeb1858
+                    description: Cart ID
+                    required: true
+            responses:
+                "200":
+                    description: Cart found
+                    content:
+                        application/json:
+                            schemas:
+                                $ref: '#/components/schemas/Carts'
+                            example:
+                                id: 646fb8dfc8a11e0d8eeb1858
+                                products: 
+                                    -   id: 6470338e24ae8edea22c496f
+                                        quantity: 10
+                                    -   id: 6427a8f38d91824afd9ee8c2
+                                        quantity: 5
+                                    -   id: 6427a8f38d91824afd9ee8c3
+                                        quantity: 8
+                "500":
+                    description: Server error
+                "400":
+                    description: Missing data

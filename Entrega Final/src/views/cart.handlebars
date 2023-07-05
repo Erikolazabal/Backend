@@ -1,0 +1,36 @@
+<div class="navbar">
+    <a href="http://localhost:3000/" class="logo">Tienda de Cajas</a>
+    <div class="navbar-list">
+        <a href="http://localhost:3000/profile">Perfil</a>
+        <a href="http://localhost:3000/products">Productos</a>
+        <a href="http://localhost:3000/carts/{{cart}}">Carrito</a>
+        
+        <a href="http://localhost:3000/users/logout">Cerrar sesion</a>
+    </div>
+</div>
+
+<div class="cart-container">
+    <h2>Carrito</h2>
+    <div class="product-list">
+        {{#if hasProducts}}
+            {{#each products}}
+                <div class="product-card">
+                    <img class="product-image" src="{{this._id.thumbnail}}" alt="product image"/>
+                    <div class="product-details">
+                        <h3>{{this._id.title}}</h3>
+                        <p class="price">${{this._id.price}}</p>
+                        <p class="category">Categoría: {{this._id.category}}</p>
+                        <p class="quantity">Cantidad: {{this.quantity}}</p>
+                    </div>
+                </div>
+            {{/each}}
+        {{else}}
+            <h3>El carrito está vacío</h3>
+        {{/if}}
+    </div>
+    <div class="cart-buttons">
+        <button id="emptyCart" class="btn-empty">Vaciar carrito</button>
+        <button id="purchase" class="btn-purchase">Finalizar compra</button>
+    </div>
+</div>
+<script src="/js/cart.js"></script>

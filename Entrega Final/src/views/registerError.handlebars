@@ -1,0 +1,50 @@
+<style>
+    .error-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .error {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .error-title {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .error-message {
+            font-size: 16px;
+            color: #555;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .error-link {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .error-link:hover {
+            text-decoration: underline;
+        }
+</style>
+<div class="error-container">
+        <div class="error">
+            <h2 class="error-title">Error al realizar el registro</h2>
+            <p class="error-message">El usuario ingresado ya existe</p>
+            <a href="/" class="error-link">Ir a loguearse</a>
+        </div>
+    </div>

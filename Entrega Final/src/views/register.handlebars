@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="registration-box">
+        <div class="position">
+            <a href="http://localhost:3000/" class="logo">Tienda de Cajas</a>
+        </div>
+        <form action="/users/register" method="post" class="registration-form">
+            <div class="form-group">
+                <label for="first_name" class="label"><i class="fas fa-user"></i></label>
+                <input type="text" name="first_name" id="first_name" class="input-field" placeholder="Ingresa tu nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name" class="label"><i class="fas fa-user"></i></label>
+                <input type="text" name="last_name" id="last_name" class="input-field" placeholder="Ingresa tu apellido" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age" class="label"><i class="fas fa-birthday-cake"></i></label>
+                <input type="number" name="age" id="age" class="input-field" placeholder="Ingresa tu edad" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="label"><i class="fas fa-envelope"></i></label>
+                <input type="email" name="email" id="email" class="input-field" placeholder="Ingresa tu email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="label"><i class="fas fa-lock"></i></label>
+                <input type="password" name="password" id="password" class="input-field" placeholder="Ingresa tu contraseña" required>
+            </div>
+
+            <input type="submit" value="Registrarse" class="btn-submit">
+        </form>
+
+        <h2 class="subtitle">O también puedes registrarte con:</h2>
+        <a href="http://localhost:3000/users/github/auth" class="btn-github"><i class="fab fa-github"></i> GITHUB</a>
+    </div>
+</div>

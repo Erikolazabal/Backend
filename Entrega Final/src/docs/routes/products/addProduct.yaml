@@ -1,0 +1,53 @@
+paths:
+    /api/products:
+        post:
+            summary: Crear Producto
+            tags:
+                - Products
+            parameters:
+                -   in: body
+                    name: Product data
+                    schema:
+                        type: object
+                        example:
+                            product:
+                                title: Producto de ejemplo 1
+                                description: Este es un ejemplo de producto
+                                category: producto
+                                code: "PROD001"
+                                stock: 16
+                                price: 199
+                                status: true
+                                thumbnail: https://w7.pngwing.com/pngs/918/14/png-transparent-brown-box-cardboard-box-corrugated-box-design-carton-closed-cardboard-box-miscellaneous-cardboard-gift-box-thumbnail.png
+                    description: Product data
+                    required: true
+                -   in: body
+                    name: Admin password
+                    schema:
+                        type: object
+                        example: 
+                            password: 1234
+                    required: true
+            responses:
+                "200":
+                    description: Product created
+                    content:
+                        application/json:
+                            schemas:
+                                $ref: '#/components/schemas/Products'
+                            example:
+                                title: Producto de ejemplo 1
+                                description: Este es un ejemplo de producto
+                                category: producto
+                                code: "PROD001"
+                                stock: 16
+                                price: 199
+                                status: true
+                                thumbnail: https://w7.pngwing.com/pngs/918/14/png-transparent-brown-box-cardboard-box-corrugated-box-design-carton-closed-cardboard-box-miscellaneous-cardboard-gift-box-thumbnail.png
+                                owner: admin
+                                _id: 6470338e24ae8edea22c496f,
+                                __v: 0
+                "500":
+                    description: Server error
+                "400":
+                    description: Missing data

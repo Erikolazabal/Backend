@@ -1,0 +1,42 @@
+<div class="product-creation-container">
+    <h2 class="product-creation-title">Crea tus propios productos</h2>
+
+    <form action="/api/products/premium" method="post" class="product-creation-form">
+        <div class="form-group">
+            <label for="title" class="product-creation-label">Nombre</label>
+            <input type="text" name="title" id="title" class="product-creation-input" placeholder="Ingresa el nombre del producto" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description" class="product-creation-label">Descripción</label>
+            <input type="text" name="description" id="description" class="product-creation-input" placeholder="Ingresa la descripción del producto" required>
+        </div>
+
+        <div class="form-group">
+            <label for="price" class="product-creation-label">Precio</label>
+            <input type="number" name="price" id="price" class="product-creation-input" placeholder="Ingresa el precio del producto" required>
+        </div>
+
+        <div class="form-group">
+            <label for="stock" class="product-creation-label">Stock</label>
+            <input type="number" name="stock" id="stock" class="product-creation-input" placeholder="Ingresa la cantidad en stock" required>
+        </div>
+
+        <div class="form-group">
+            <label for="code" class="product-creation-label">Código</label>
+            <input type="text" name="code" id="code" class="product-creation-input" placeholder="Ingresa el código del producto" required>
+        </div>
+
+        <div class="form-group">
+            <label for="category" class="product-creation-label">Categoría</label>
+            <input type="text" name="category" id="category" class="product-creation-input" placeholder="Ingresa la categoría del producto" required>
+        </div>
+
+        <div class="form-group">
+            <label for="thumbnail" class="product-creation-label">URL imagen</label>
+            <input type="text" name="thumbnail" id="thumbnail" class="product-creation-input" placeholder="Ingresa la URL de la imagen" required>
+        </div>
+
+        <input type="submit" value="Crear producto" class="product-creation-button">
+    </form>
+</div>

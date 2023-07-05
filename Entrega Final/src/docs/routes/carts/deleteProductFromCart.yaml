@@ -1,0 +1,32 @@
+paths:
+    /api/carts/{cid}/product/{pid}:
+        delete:
+            summary: Eliminar producto del carrito, el usuario debe iniciar sesión, funciona en la interfaz web.
+            tags:
+                - Carts
+            parameters:
+                -   in: path
+                    name: cid
+                    schema:
+                        type: string
+                        example: 646fb8dfc8a11e0d8eeb1858
+                    description: Cart ID
+                    required: true
+                -   in: path
+                    name: pid
+                    schema:
+                        type: string
+                        example: 6470338e24ae8edea22c496f
+                    description: Product ID
+                    required: true
+            responses:
+                "200":
+                    description: Product deleted from cart
+                    content:
+                        application/json:
+                            schemas:
+                                $ref: '#/components/schemas/Carts'
+                "500":
+                    description: Server error
+                "400":
+                    description: Missing data

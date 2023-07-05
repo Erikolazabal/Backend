@@ -1,0 +1,6 @@
+paths:
+    /api/products/premium:
+        post:
+            summary: Ruta para crear productos para usuarios premium, cuenta con su propia interfaz.
+            tags:
+                - Products

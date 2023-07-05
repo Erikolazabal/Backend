@@ -1,0 +1,55 @@
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f6f9fc;
+        }
+        
+        .users-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .users-title {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .users-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .users-item {
+            margin-bottom: 10px;
+        }
+        
+        .users-link {
+            text-decoration: none;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        .users-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+<div class="users-container">
+        <h1 class="users-title">Lista de usuarios</h1>
+        <ul class="users-list">
+            {{#each users}}
+            <li class="users-item">
+                <a href="http://localhost:3000/users/{{this._id}}" class="users-link">{{this.first_name}} {{this.last_name}}</a>
+            </li>
+            {{/each}}
+        </ul>
+</div>

@@ -1,0 +1,36 @@
+paths:
+    /api/products/{pid}:
+        get:
+            summary: Obtener producto por ID
+            tags:
+                - Products
+            parameters:
+                -   in: path
+                    name: pid
+                    schema:
+                        type: string
+                        example: 6470338e24ae8edea22c496f
+                    description: Product ID
+                    required: true
+            responses:
+                "200":
+                    description: Product found
+                    content:
+                        application/json:
+                            schemas:
+                                $ref: '#/components/schemas/Products'
+                            example:
+                                id: 6470338e24ae8edea22c496f
+                                title: Producto de ejemplo 1
+                                description: Este es un ejemplo de producto
+                                category: producto
+                                code: "PROD001"
+                                stock: 16
+                                price: 199
+                                status: true
+                                thumbnail: https://w7.pngwing.com/pngs/918/14/png-transparent-brown-box-cardboard-box-corrugated-box-design-carton-closed-cardboard-box-miscellaneous-cardboard-gift-box-thumbnail.png
+                                owner: admin
+                "500":
+                    description: Server error
+                "400":
+                    description: Missing data

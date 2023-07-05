@@ -1,0 +1,38 @@
+<div class="navbar">
+    <a href="http://localhost:3000/" class="logo">Tienda de Cajas</a>
+    <div class="navbar-list">
+        <a href="http://localhost:3000/profile">Perfil</a>
+        <a href="http://localhost:3000/products">Productos</a>
+        <a href="http://localhost:3000/carts/{{cart}}">Carrito</a>
+        
+        <a href="http://localhost:3000/users/logout">Cerrar sesion</a>
+    </div>
+</div>
+
+<div class="upload-form">
+    <h1>Subir documentación</h1>
+    <form action="/users/{{userId}}/documents" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="file">Documento:</label>
+            <input type="file" name="file" id="file">
+        </div>
+        <div class="form-group flex">
+            <p>¿Qué documento estás subiendo?</p>
+            <div class="radio-group">
+                <input type="radio" name="uploadType" id="doc1" value="id"/>
+                <label for="doc1">Identificación</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" name="uploadType" id="doc2" value="adress"/>
+                <label for="doc2">Comprobante de domicilio</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" name="uploadType" id="doc3" value="account"/>
+                <label for="doc3">Comprobante de cuenta</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Enviar" />
+        </div>
+    </form>
+</div>

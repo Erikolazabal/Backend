@@ -1,0 +1,53 @@
+<div class="navbar">
+    <a href="http://localhost:3000/" class="logo">Tienda de Cajas</a>
+    <div class="navbar-list">
+        <a href="http://localhost:3000/profile">Perfil</a>
+        <a href="http://localhost:3000/products">Productos</a>
+        <a href="http://localhost:3000/carts/{{cart}}">Carrito</a>
+        
+        <a href="http://localhost:3000/users/logout">Cerrar sesion</a>
+    </div>
+</div>
+
+<div class="mainProducts">
+    <div class="filter-col">
+            <h2>Filtros</h2>
+        <p>
+            Precio:
+            <a href="http://localhost:3000/products?sort=asc">Ascendente</a>
+            <a href="http://localhost:3000/products?sort=desc">Descendente</a>
+        </p>
+        <p>
+            Disponibilidad:
+            <a href="http://localhost:3000/products?status=true">Productos con stock</a>
+            <a href="http://localhost:3000/products?status=false">Productos sin stock</a>
+        </p>
+        <p><a href="http://localhost:3000/products">Limpiar filtros</a></p>
+    </div>
+
+    <div class="products-col">
+        <h2>Bienvenido {{full_name}}</h2>
+            <p>Rol: {{role}}</p>
+            <a href="/users/logout">Cerrar sesion</a>
+                {{#if hasProducts}}
+                    {{#each products}}
+                        <div class="product-card">
+                            <img class="product-image" src="{{this.thumbnail}}" alt="product image"/>
+                            <div class="product-details">
+                                <h3>{{this.title}}</h3>
+                                <p class="price">${{this.price}}</p>
+                                <p class="category">
+                                    <a href="http://localhost:3000/products?category={{this.category}}">{{this.category}}</a>
+                                </p>
+                                <p class="details">
+                                    <a href="http://localhost:3000/products/{{this.id}}">Ver detalle</a>
+                                </p>
+                            </div>
+                        </div>
+                    {{/each}}
+                {{else}}
+                    <h2>La lista de productos está vacía</h2>
+                {{/if}}
+
+    </div>
+</div>
